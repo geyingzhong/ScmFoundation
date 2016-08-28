@@ -23,6 +23,8 @@ class ScmFoundationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app['foundation'] = $this->app->share(function() {
+            return new BaseData();
+        });
     }
 }
